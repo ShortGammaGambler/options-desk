@@ -1,39 +1,54 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
-
+import { TierProvider } from "./contexts/TierContext";
+import DashboardLayout from "./components/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
+import Analytics from "./pages/Analytics";
+import QuantModels from "./pages/QuantModels";
+import Strategies from "./pages/Strategies";
+import PositionSizing from "./pages/PositionSizing";
+import Backtesting from "./pages/Backtesting";
+import WalkForward from "./pages/WalkForward";
+import MonteCarlo from "./pages/MonteCarlo";
+import EfficientFrontier from "./pages/EfficientFrontier";
+import VolSurface from "./pages/VolSurface";
+import Pricing from "./pages/Pricing";
+import NotFound from "./pages/NotFound";
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <DashboardLayout>
+      <Switch>
+        <Route path="/" component={Dashboard} />
+        <Route path="/analytics" component={Analytics} />
+        <Route path="/quant" component={QuantModels} />
+        <Route path="/strategies" component={Strategies} />
+        <Route path="/sizing" component={PositionSizing} />
+        <Route path="/backtest" component={Backtesting} />
+        <Route path="/walkforward" component={WalkForward} />
+        <Route path="/montecarlo" component={MonteCarlo} />
+        <Route path="/frontier" component={EfficientFrontier} />
+        <Route path="/volsurface" component={VolSurface} />
+        <Route path="/pricing" component={Pricing} />
+        <Route component={NotFound} />
+      </Switch>
+    </DashboardLayout>
   );
 }
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+      <ThemeProvider defaultTheme="dark">
+        <TierProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </TierProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
