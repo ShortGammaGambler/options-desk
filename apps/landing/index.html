@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Options Desk | Terminal-grade options analytics</title>
+    <meta
+      name="description"
+      content="Options Desk is a public-facing options analytics dashboard and terminal-inspired trading workspace."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">OD</div>
+          <div>
+            <div class="brand-name">Options Desk</div>
+            <div class="brand-subtitle">open analytics workspace</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#features">Features</a>
+          <a href="#overview">Overview</a>
+          <a href="#license">License</a>
+        </nav>
+      </header>
+
+      <main class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Bloomberg Terminal noir. Modern options research.</p>
+          <h1>Terminal-grade dashboards for options intelligence.</h1>
+          <p class="lead">
+            Options Desk brings a professional options workflow to the browser with a
+            clean analytics interface, advanced market views, strategy framing, and a
+            public application layer designed for openness and extensibility.
+          </p>
+
+          <div class="cta-row">
+            <a class="button primary" href="../../README.md">Read the repo</a>
+            <a class="button secondary" href="../../package.json">View package</a>
+          </div>
+
+          <ul class="mini-stats">
+            <li><strong>GEX</strong><span>Gamma exposure</span></li>
+            <li><strong>DIX</strong><span>Dark volume mix</span></li>
+            <li><strong>DEX</strong><span>Delta exposure</span></li>
+          </ul>
+        </div>
+
+        <div class="panel-frame" aria-label="Mock analytics panel">
+          <div class="panel-header">
+            <span class="dot red"></span>
+            <span class="dot amber"></span>
+            <span class="dot green"></span>
+            <span class="window-title">options-desk:live</span>
+          </div>
+
+          <div class="chart-grid">
+            <div class="card">
+              <label>SPX</label>
+              <div class="metric">5,732.11</div>
+              <span class="up">+0.84%</span>
+            </div>
+            <div class="card">
+              <label>VIX</label>
+              <div class="metric">14.82</div>
+              <span class="down">-1.23%</span>
+            </div>
+            <div class="card full">
+              <label>Gamma Exposure</label>
+              <div class="bars" aria-hidden="true">
+                <span style="height: 40%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 72%"></span>
+                <span style="height: 62%"></span>
+                <span style="height: 88%"></span>
+                <span style="height: 76%"></span>
+                <span style="height: 92%"></span>
+                <span style="height: 65%"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <section id="features" class="section">
+        <h2>Public-facing product stack</h2>
+        <div class="feature-grid">
+          <article>
+            <span>01</span>
+            <h3>Research dashboard</h3>
+            <p>Display core market data, exposures, and option flow in a clean workspace.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Strategy framing</h3>
+            <p>Present strategy ideas, risk profiles, and position management in an approachable format.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Public app architecture</h3>
+            <p>Keep the user experience open while protecting proprietary analytics behind private boundaries.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="overview" class="section muted">
+        <h2>Public/private boundary</h2>
+        <p>
+          This project aims to keep the main application, interface, and tooling open while
+          excluding private trading logic and proprietary research from public release.
+        </p>
+      </section>
+
+      <footer id="license" class="footer">
+        <p>MIT Licensed public codebase • proprietary research intentionally separated</p>
+      </footer>
+    </div>
+  </body>
+</html>
